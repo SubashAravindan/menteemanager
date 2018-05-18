@@ -4,6 +4,9 @@ if (localStorage.getItem("menteeArray")!=null) {
 	var temp=localStorage.getItem("m");
 	menteeList=JSON.parse(temp);
 }
+else{
+	menteeList=[];
+}
 var submitButton=document.getElementById("submit");
 var newName=document.getElementById("newname");
 var newRollNo=document.getElementById("newrollno");
