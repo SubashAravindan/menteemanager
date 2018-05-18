@@ -1,6 +1,6 @@
 
 var menteeList;
-if (localStorage.getItem("menteeArray")!=null) {
+if (localStorage.getItem("m")!=null) {
 	var temp=localStorage.getItem("m");
 	menteeList=JSON.parse(temp);
 }
