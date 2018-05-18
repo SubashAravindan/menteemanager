@@ -3,11 +3,12 @@
   text-align: center;
   float: left;
   margin-right: 1.66%;
+  margin-top: 20px;
 }
 
 .container{
-  width: 80%;
-  margin: 0 auto;
+  width: 70%;
+  margin: 20px auto;
 }
 
 
@@ -26,3 +27,75 @@
 	background-color: #efdc09;
 }
 
+h1{
+  text-align: center;
+  font-size: 3.5em;
+
+}
+#sortDiv{
+  margin-top: 10px;
+  text-align: center;
+}
+#addDiv{
+  text-align: center;;
+}
+
+button{
+  font-size: 1.5em;
+}
+#formdiv{
+  border: 2px solid black;
+}
+#delButton{
+  margin-left: 5%;
+}
+
+#newDiv p{
+  font-size: 1.5em;
+}
+
+#newDiv p:nth-of-type(2n+1){
+
+  font-weight: bold;
+  line-height: 40%;
+}
+
+.nameP, .rollNoP, .ratingP, .commentP{
+  font-weight: normal;
+
+}
+
+@media only screen and (max-width: 500px){
+  h1{
+    font-size: 2.0em;
+  }
+
+  .menteebox{
+    width: 100%;
+  }
+
+  button{
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 770px) and (min-width: 500px){
+  .menteebox{
+    width: 48%;
+    margin-right:2%; 
+    float: left;
+  }
+  h1{
+    font-size: 2.5em;
+  }
+  button{
+    font-size :1.2em
+  }
+  #newDiv p{
+  font-size: 1.2em;
+}
+
+.container{
+  width: 80%;
+}
+}

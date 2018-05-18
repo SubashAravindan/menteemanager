@@ -7,35 +7,35 @@
 
 
 </head>
-<body>
+<body >
 	<div id="toppanel">
 		<h1>Mentee management dashboard</h1>
-		<div>
+		<div id="addDiv">
 			<button id="addButton">Add Mentee</button>
 			
 		</div>
 		<div id="formdiv" class="hidden">
 			<form>
-				<input type="text" name="menteename" placeholder="Mentee's name" id="newname" required>
-				<input type="number" name="rollno" placeholder="Mentee's RollNo" id="newrollno" required>
+				<p><label>Mentee name :<input type="text" name="menteename" placeholder="Name" id="newname" required></label></p>
+				<p><label>Mentee Roll No :<input type="number" name="rollno" placeholder="RollNo" id="newrollno" required></label></p>
 				<div>
-				
-					<input type="radio" name="rating" value="1"  id="1-star" checked >
-					<input type="radio" name="rating" value="2" id="2-star" >
-					<input type="radio" name="rating" value="3" id="3-star" >
-					<input type="radio" name="rating" value="4" id="4-star" >
-					<input type="radio" name="rating" value="5" id="5-star" >
+					<p>Rating :</p>
+					<p><label>1 Star<input type="radio" name="rating" value="1"  id="1-star" checked ></label></p>
+					<p><label>2 Star<input type="radio" name="rating" value="2" id="2-star" ></label></p>
+					<p><label>3 Star<input type="radio" name="rating" value="3" id="3-star" ></label></p>
+					<p><label>4 Star<input type="radio" name="rating" value="4" id="4-star" ></label></p>
+					<p><label>5 Star<input type="radio" name="rating" value="5" id="5-star" ></label></p>
 				
 				</div>
-				<textarea id="newcomments"></textarea>
+				<label>Comment about the mentee :</label><p><textarea id="newcomments"></textarea></p>
 				<div>
-					<input type="button" id="submit" value="DONE">
+					<button id="submit">DONE</button">
 
 				</div>
 			</form>
 		</div>
 	</div>
-	<div ><button id="sortButton">SORT</button></div>
+	<div id="sortDiv"><button id="sortButton">SORT</button></div>
 	<div class="container">
 
 		<div id="menteedisplay">

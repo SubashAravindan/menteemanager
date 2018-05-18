@@ -1,8 +1,9 @@
 
-var menteeList=[];
-// if (localStorage.getItem("menteeArray")!=null) {
-// 	menteeList=localStorage.getItem("menteeArray");
-// }
+var menteeList;
+if (localStorage.getItem("menteeArray")!=null) {
+	var temp=localStorage.getItem("m");
+	menteeList=JSON.parse(temp);
+}
 var submitButton=document.getElementById("submit");
 var newName=document.getElementById("newname");
 var newRollNo=document.getElementById("newrollno");
@@ -12,7 +13,7 @@ var addButton=document.getElementById("addButton");
 var formDiv=document.getElementById("formdiv");
 var sortButton=document.querySelector("#sortButton");
 var p;
-var extendedDivHTML='<div><p>NAME :</p><p class="nameP"></p></div><div><p>RollNo :</p><p class="rollNoP"></p></div><div><p>Comments :</p><p class="commentP"></p></div><div><p>Rating :</p><p class="ratingP"></p></div><div><button id="editButton">Edit</button><button id="delButton">Delete</button></div>';
+var extendedDivHTML='<div><p>NAME :</p><p class="nameP"></p></div><div><p>RollNo :</p><p class="rollNoP"></p></div><div><p>Comments :</p><p class="commentP"></p></div><div><p>Rating :</p><p class="ratingP"></p></div><div><span><button id="editButton">Edit</button></span><span><button id="delButton">Delete</button></span></div>';
 var normalDivHTML= '<div><p>Name :</p><p class="nameP"></p></div><div><p>Rating</p><p class="ratingP"></p></div>'
 addButton.addEventListener("click",function () {
 	formDiv.classList.remove("hidden");
@@ -39,7 +40,7 @@ submitButton.addEventListener("click",function(){
 		formDiv.classList.add("hidden");
 		addButton.removeAttribute("disabled");
 	}
-	// localStorage.setItem("menteeArray",menteeList);
+	localStorage.setItem("m",JSON.stringify(menteeList));
 
 })
 
@@ -83,6 +84,7 @@ function editMentee(i) {
 
 function delMentee(i) {
 	menteeList.splice(i,1);
+	localStorage.setItem("m",JSON.stringify(menteeList));
 	displayUpdate(-1);
 }
 function displayUpdate(expandedIndex) {
@@ -100,8 +102,11 @@ function displayUpdate(expandedIndex) {
 	}
 	}
 
+displayUpdate(-1);
+
 function createNormalMenteeBox(i) {
 	var newDiv=document.createElement("div");
+	newDiv.setAttribute("id","newDiv");
 	newDiv.classList.add("menteebox");
 	menteeDisplay.appendChild(newDiv);
 	if (menteeList[i].rating>3) {
@@ -130,6 +135,7 @@ function createNormalMenteeBox(i) {
 
 function createExpandedMenteeBox(i) {
 	var newDiv=document.createElement("div");
+	newDiv.setAttribute("id","newDiv");
 	newDiv.classList.add("menteebox");
 	menteeDisplay.appendChild(newDiv);
 
