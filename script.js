@@ -1,4 +1,8 @@
+
 var menteeList=[];
+// if (localStorage.getItem("menteeArray")!=null) {
+// 	menteeList=localStorage.getItem("menteeArray");
+// }
 var submitButton=document.getElementById("submit");
 var newName=document.getElementById("newname");
 var newRollNo=document.getElementById("newrollno");
@@ -8,11 +12,14 @@ var addButton=document.getElementById("addButton");
 var formDiv=document.getElementById("formdiv");
 var sortButton=document.querySelector("#sortButton");
 var p;
-var extendedDivHTML='<div><p>NAME :</p><p id="nameP"></p></div><div><p>RollNo :</p><p id="rollNoP"></p></div><div><p>Comments :</p><p id="commentP"></p></div><div><p>Rating :</p><p id="ratingP"></p></div><div><button id="editButton">Edit</button><button id="delButton">Delete</button></div>';
-var normalDivHTML= '<div><p>Name :</p><p id="nameP"></p></div><div><p>Rating</p><p id="ratingP"></p></div>'
+var extendedDivHTML='<div><p>NAME :</p><p class="nameP"></p></div><div><p>RollNo :</p><p class="rollNoP"></p></div><div><p>Comments :</p><p class="commentP"></p></div><div><p>Rating :</p><p class="ratingP"></p></div><div><button id="editButton">Edit</button><button id="delButton">Delete</button></div>';
+var normalDivHTML= '<div><p>Name :</p><p class="nameP"></p></div><div><p>Rating</p><p class="ratingP"></p></div>'
 addButton.addEventListener("click",function () {
 	formDiv.classList.remove("hidden");
 	this.classList.add("hidden");
+	if(document.querySelector("#editButton")!=null){
+		editButton.setAttribute("disabled",true);
+	}
 })
 
 submitButton.addEventListener("click",function(){
@@ -30,9 +37,9 @@ submitButton.addEventListener("click",function(){
 		newComments.value="";
 		newRollNo.value="";
 		formDiv.classList.add("hidden");
-		addButton.removeAttribute("disabled")
+		addButton.removeAttribute("disabled");
 	}
-	
+	// localStorage.setItem("menteeArray",menteeList);
 
 })
 
@@ -54,6 +61,9 @@ function addNewMentee() {
 		newName.value="";
 		newComments.value="";
 		newRollNo.value="";
+		if(document.querySelector("#editButton")!=null){
+			editButton.setAttribute("disabled",false);
+		}
 		displayUpdate(-1);
 		formDiv.classList.add("hidden");
 		addButton.classList.remove("hidden");
@@ -104,8 +114,8 @@ function createNormalMenteeBox(i) {
 	}	
 
 	newDiv.innerHTML=normalDivHTML;
-	document.getElementById("nameP").textContent=menteeList[i].name;
-	document.getElementById("ratingP").textContent=menteeList[i].rating;
+	document.querySelectorAll(".nameP")[document.querySelectorAll(".nameP").length-1].textContent=menteeList[i].name;
+	document.querySelectorAll(".ratingP")[document.querySelectorAll(".ratingP").length-1].textContent=menteeList[i].rating;
 	// var nameDiv=document.createElement("div");
 	// var ratingDiv=document.createElement("div");
 	// newDiv.appendChild(nameDiv);
@@ -132,10 +142,10 @@ function createExpandedMenteeBox(i) {
 		newDiv.classList.add("redbox");
 	}
 	newDiv.innerHTML=extendedDivHTML;
-	document.getElementById("nameP").textContent=menteeList[i].name;
-	document.getElementById("rollNoP").textContent=menteeList[i].rollno;
-	document.getElementById("ratingP").textContent=menteeList[i].rating;
-	document.getElementById("commentP").textContent=menteeList[i].comments;
+	document.querySelectorAll(".nameP")[document.querySelectorAll(".nameP").length-1].textContent=menteeList[i].name;
+	document.querySelectorAll(".rollNoP")[document.querySelectorAll(".rollNoP").length-1].textContent=menteeList[i].rollno;
+	document.querySelectorAll(".ratingP")[document.querySelectorAll(".ratingP").length-1].textContent=menteeList[i].rating;
+	document.querySelectorAll(".commentP")[document.querySelectorAll(".commentP").length-1].textContent=menteeList[i].comments;
 	// var nameDiv=document.createElement("div");
 	// var rollDiv=document.createElement("div");
 	// var ratingDiv=document.createElement("div");
