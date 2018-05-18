@@ -1,0 +1,27 @@
+.menteebox{
+  width: 30%;
+  text-align: center;
+  float: left;
+  margin-right: 1.66%;
+}
+
+.container{
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+.hidden{
+  display: none;
+}
+
+.greenbox{
+	background-color: green;
+}
+
+.redbox{
+	background-color: #ff0000;
+}
+.orangebox{
+	background-color: #e55406;
+}

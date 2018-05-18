@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mentee manager</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+
+
+</head>
+<body>
+	<div id="toppanel">
+		<h1>Mentee management dashboard</h1>
+		<div>
+			<button id="addButton">Add Mentee</button>
+			
+		</div>
+		<div id="formdiv" class="hidden">
+			<form>
+				<input type="text" name="menteename" placeholder="Mentee's name" id="newname" required>
+				<input type="number" name="rollno" placeholder="Mentee's RollNo" id="newrollno" required>
+				<div>
+				
+					<input type="radio" name="rating" value="1"  id="1-star" checked >
+					<input type="radio" name="rating" value="2" id="2-star" >
+					<input type="radio" name="rating" value="3" id="3-star" >
+					<input type="radio" name="rating" value="4" id="4-star" >
+					<input type="radio" name="rating" value="5" id="5-star" >
+				
+				</div>
+				<textarea id="newcomments"></textarea>
+				<div>
+					<input type="button" id="submit" value="DONE">
+
+				</div>
+			</form>
+		</div>
+	</div>
+	<div ><button id="sortButton">SORT</button></div>
+	<div class="container">
+
+		<div id="menteedisplay">
+		
+		</div>
+	</div>
+
+
+
+
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
+
+
