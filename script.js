@@ -124,12 +124,8 @@ function createNormalMenteeBox(i) {
 	newDiv.innerHTML=normalDivHTML;
 	document.querySelectorAll(".nameP")[document.querySelectorAll(".nameP").length-1].textContent=menteeList[i].name;
 	document.querySelectorAll(".ratingP")[document.querySelectorAll(".ratingP").length-1].textContent=menteeList[i].rating;
-	// var nameDiv=document.createElement("div");
-	// var ratingDiv=document.createElement("div");
-	// newDiv.appendChild(nameDiv);
-	// newDiv.appendChild(ratingDiv);
-	// nameDiv.textContent="NAME : "+menteeList[i].name;
-	// ratingDiv.textContent="Rating : "+menteeList[i].rating + "stars";
+
+
 	newDiv.addEventListener("click",function() {
 		displayUpdate(i);
 	})
@@ -155,24 +151,7 @@ function createExpandedMenteeBox(i) {
 	document.querySelectorAll(".rollNoP")[document.querySelectorAll(".rollNoP").length-1].textContent=menteeList[i].rollno;
 	document.querySelectorAll(".ratingP")[document.querySelectorAll(".ratingP").length-1].textContent=menteeList[i].rating;
 	document.querySelectorAll(".commentP")[document.querySelectorAll(".commentP").length-1].textContent=menteeList[i].comments;
-	// var nameDiv=document.createElement("div");
-	// var rollDiv=document.createElement("div");
-	// var ratingDiv=document.createElement("div");
-	// var commentDiv=document.createElement("div");
-	// var editButton=document.createElement("button");
-	// var delButton=document.createElement("button");
-	// newDiv.appendChild(nameDiv);
-	// newDiv.appendChild(rollDiv);
-	// newDiv.appendChild(ratingDiv);
-	// newDiv.appendChild(commentDiv);
-	// newDiv.appendChild(editButton);
-	// newDiv.appendChild(delButton);
-	// editButton.textContent="Edit";
-	// delButton.textContent="Delete";
-	// nameDiv.textContent="NAME : "+menteeList[i].name;
-	// ratingDiv.textContent="Rating : "+menteeList[i].rating + "stars";
-	// rollDiv.textContent="Roll No : " + menteeList[i].rollno;
-	// commentDiv.textContent=menteeList[i].comments;
+
 	document.getElementById("delButton").addEventListener("click",function () {
 		delMentee(i);
 	})
